@@ -20,10 +20,10 @@ There are mainly three types of tables in snowflake
 - No fail-safe 
 ##### Transient table 
 - Table will create and  exist till we drop.
-- Time travel - 1 day   
+- Time travel - 0-1 days  
 - No fail-safe 
 ##### Permanent  table 
 - Table will create and  exist till we drop.
-- Time travel - 1-90 days  
-- Fail-safe   - 7 days 
+- Time travel - 1-90 days (Enterprise)  (Standerd-0-1days  )
+- Fail-safe   - 7 days (All)
  
