@@ -5,4 +5,4 @@ password  : Mahesh@8143738092 <br>
 
 #### Snowflake :
 
-Snowflake is a cloude based data platform which separates data storage and compute resources to enable the independent scaling and also supports the structured and non structured data.it supports differnt features like auto scaling and high concurency.
+Snowflake is a cloude based data  warehouse platform which separates data storage and compute resources to enable the independent scaling unlike traditional data warehouse and also it natively handles both the structured and non structured data and offers features like auto scaling and high concurency.
