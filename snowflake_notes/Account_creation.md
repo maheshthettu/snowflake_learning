@@ -20,7 +20,7 @@ The storage is entirely handled and optimized by Snowflake behind the scenes.
 ##### 2.Compute layer : 
 It stays on top of the storage layer, All data computations will be done in this layer whith the compute Virtual Warehouse.Each virtual warehouse is completely independent.
 
-Warehouses can be resized (scaled up) or spun up in parallel (multi-cluster scaling) instantly, and can be paused automatically when idle to save costs
+Warehouses can be resized (scaled up) or spun up in parallel (multi-cluster scaling) instantly, and can be paused automatically when idle to save costs.
 
 ##### 3.Cloud service layer : 
 This is the "control plane" or brain of the platform, coordinating activities across all layers.It manages user authentication, access control, metadata, and security.It parses, compiles, and optimizes your SQL queries before sending them to the compute layer.It handles infrastructure management, concurrency, and automated statistics collection.
