@@ -33,8 +33,8 @@ This is the "control plane" or brain of the platform, coordinating activities ac
 4.Virtual Private Snowflake 
 
 #### Micro partitions 
-In Snowflake, micro-partitions are the fundamental, contiguous units of storage into which all table data is automatically divided. Each partition contains 50 to 500 MB of uncompressed data and is organized i n a columnar format. This architecture eliminates the need for manual, index-based partitioning.
+In Snowflake, micro-partitions are the fundamental, contiguous units of storage into which all table data is automatically divided. Each partition contains 50 to 500 MB of uncompressed data and is organized in a columnar format. This architecture eliminates the need for manual, index-based partitioning.
 
-These are immutable. once created we can't updated . if any changes in data new micro partion is created.
+These are immutable. once created we can't updated . if any changes in data new micro partion will be created.
 
 
