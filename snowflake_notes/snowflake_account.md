@@ -20,21 +20,21 @@ The storage is entirely handled and optimized by Snowflake behind the scenes.
 ##### 2.Compute layer : 
 It stays on top of the storage layer, All data computations will be done in this layer whith the compute Virtual Warehouse.Each virtual warehouse is completely independent.
 
-Warehouses can be resized (scaled up) or spun up in parallel (multi-cluster scaling) instantly, and can be paused automatically when idle to save costs
+Warehouses can be resized (scaled up) or spun up in parallel (multi-cluster scaling) instantly, and can be paused automatically when idle to save costs.
 
 ##### 3.Cloud service layer : 
 This is the "control plane" or brain of the platform, coordinating activities across all layers.It manages user authentication, access control, metadata, and security.It parses, compiles, and optimizes your SQL queries before sending them to the compute layer.It handles infrastructure management, concurrency, and automated statistics collection.
 
 
 #### Snowflake Accounts Types
-1.Standerd 
-2.Enterprise
-3.Business Critical
-4.Virtual Private Snowflake 
+1. Standard
+2. Enterprise
+3. Business Critical
+4. Virtual Private Snowflake
 
 #### Micro partitions 
-In Snowflake, micro-partitions are the fundamental, contiguous units of storage into which all table data is automatically divided. Each partition contains 50 to 500 MB of uncompressed data and is organized i n a columnar format. This architecture eliminates the need for manual, index-based partitioning.
+In Snowflake, micro-partitions are the fundamental, contiguous units of storage into which all table data is automatically divided. Each partition contains 50 to 500 MB of uncompressed data and is organized in a columnar format. This architecture eliminates the need for manual, index-based partitioning.
 
-These are immutable. once created we can't updated . if any changes in data new micro partion is created.
+These are immutable. once created we can't updated . if any changes in data new micro partion will be created.
 
 
