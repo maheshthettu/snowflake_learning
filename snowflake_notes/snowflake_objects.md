@@ -31,5 +31,27 @@ There are mainly three types of tables in snowflake
  
 Snowflake Data Masking is a native column-level security feature that allows organizations to protect sensitive information like PII, PHI, or financial records by altering data in query results. The underlying data stored in your tables remains completely unchanged; the transformation happens entirely on-the-fly at query execution time based on the user's role and context.
 
+```sql
+CREATE OR REPLACE MASKING POLICY STM.ADM.PASSWORD_MASK AS
+(val STRING) RETURNS STRING ->
+CASE
+    WHEN CURRENT_ROLE() IN ('ACCOUNTADMIN')
+        THEN val
+    ELSE '********'
+END;
+```
+
 #### Snowflake Stage 
 A Snowflake stage is a secure holding area or intermediary storage location used to temporarily or permanently store data files before they are loaded into database tables or extracted to external systems. Stages simplify and optimize data ingestion, commonly used with the COPY INTO command.
+
+Snowflake does support auto-ingestion for internal stages in specific situations.
+
+By default, Snowpipe does not automatically trigger when files are placed in an internal stage. Historically, using an internal stage with Snowpipe meant you had to use the Snowpipe REST API to manually trigger the load after uploading your files.
+
+```sql
+CREATE OR REPLACE PIPE STM.ADM.STUDENTS_PIPE
+AS
+COPY INTO STM.ADM.STUDENTS
+FROM @STM.ADM.STUDENT_DATA_STAGE
+FILE_FORMAT = (FORMAT_NAME = STM.ADM.STUDENTS_CSV_FORMAT);
+```
