@@ -55,18 +55,13 @@ def upload_csv_to_snowflake_stage():
                     """
 
                     cursor.execute(put_sql)
-
+                    cursor.execute("ALTER PIPE STM.ADM.STUDENTS_PIPE REFRESH")
+                    # Show files in stage
                     st.success(
-                        f"{uploaded_file.name} uploaded successfully to @{stage_name}"
+                        f"{uploaded_file.name} data is loaded successfully to snowflake"
                     )
 
-                    # Show files in stage
-                    cursor.execute(f"LIST @{stage_name}")
-                    files = cursor.fetchall()
 
-                    if files:
-                        st.write("Files currently in stage:")
-                        st.dataframe(files)
 
             except Exception as e:
                 st.error(f"Upload failed: {str(e)}")

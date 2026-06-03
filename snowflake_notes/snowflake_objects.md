@@ -33,3 +33,7 @@ Snowflake Data Masking is a native column-level security feature that allows org
 
 #### Snowflake Stage 
 A Snowflake stage is a secure holding area or intermediary storage location used to temporarily or permanently store data files before they are loaded into database tables or extracted to external systems. Stages simplify and optimize data ingestion, commonly used with the COPY INTO command.
+
+Snowflake does support auto-ingestion for internal stages in specific situations.
+
+By default, Snowpipe does not automatically trigger when files are placed in an internal stage. Historically, using an internal stage with Snowpipe meant you had to use the Snowpipe REST API to manually trigger the load after uploading your files.
