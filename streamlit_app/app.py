@@ -4,7 +4,7 @@ from screens.reportspage import report_page
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parents[2]))
-from streamlit_app.user_login_ui.user_login_ui import login_page
+from streamlit_app.user_login.user_login_ui import login_page
 
 
 if "page" not in st.session_state:

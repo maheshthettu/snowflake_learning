@@ -3,7 +3,7 @@ from user_login.user_login import  login_user
 
 def login_page():
 
-    st.subheader("Login")
+    st.subheader("Login Page")
 
     email = st.text_input("Email")
 

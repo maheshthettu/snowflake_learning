@@ -2,12 +2,10 @@ import streamlit as st
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parents[2]))
-from data_dashboard.data_dashboard_main import dashboard_page
-from data_load.data_load_main import data_load
-def report_page(): 
+def dashboard_page(): 
     st.markdown(
     """
-    <h1>Report Page</h1>
+    <h3>Dash Board Page</h3>
     """,
     unsafe_allow_html=True
 )
@@ -32,13 +30,13 @@ def report_page():
     </style>
     """, unsafe_allow_html=True)
 
-    report_page = st.sidebar.selectbox(
-        "Report Menu",
-        ["Dash Board", "Data Loading"]
+    dash_page = st.sidebar.selectbox(
+        "Event",
+        ["Student", "Cars"]
     )
 
-    if report_page == "Dash Board":
-        dashboard_page()
+    # if dash_page == "Student":
+    #     login_page()
 
-    elif report_page == "Data Loading":
-        data_load()
+    # elif dash_page == "Cars":
+    #     register_page()

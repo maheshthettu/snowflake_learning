@@ -30,3 +30,6 @@ There are mainly three types of tables in snowflake
 #### Data Masking 
  
 Snowflake Data Masking is a native column-level security feature that allows organizations to protect sensitive information like PII, PHI, or financial records by altering data in query results. The underlying data stored in your tables remains completely unchanged; the transformation happens entirely on-the-fly at query execution time based on the user's role and context.
+
+#### Snowflake Stage 
+A Snowflake stage is a secure holding area or intermediary storage location used to temporarily or permanently store data files before they are loaded into database tables or extracted to external systems. Stages simplify and optimize data ingestion, commonly used with the COPY INTO command.

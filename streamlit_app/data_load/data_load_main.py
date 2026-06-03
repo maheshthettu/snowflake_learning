@@ -2,12 +2,11 @@ import streamlit as st
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parents[2]))
-from data_dashboard.data_dashboard_main import dashboard_page
-from data_load.data_load_main import data_load
-def report_page(): 
+from  data_load.students_data import upload_csv_to_snowflake_stage
+def data_load(): 
     st.markdown(
     """
-    <h1>Report Page</h1>
+    <h3>Data Loading Page</h3>
     """,
     unsafe_allow_html=True
 )
@@ -32,13 +31,13 @@ def report_page():
     </style>
     """, unsafe_allow_html=True)
 
-    report_page = st.sidebar.selectbox(
-        "Report Menu",
-        ["Dash Board", "Data Loading"]
+    load_page = st.sidebar.selectbox(
+        "Event",
+        ["Student", "Cars"]
     )
 
-    if report_page == "Dash Board":
-        dashboard_page()
+    if load_page == "Student":
+        upload_csv_to_snowflake_stage()
 
-    elif report_page == "Data Loading":
-        data_load()
+    # elif load_page == "Cars":
+    #     register_page()
