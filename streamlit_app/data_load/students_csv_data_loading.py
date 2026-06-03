@@ -43,7 +43,7 @@ def upload_csv_to_snowflake_stage():
                 temp_file_path = temp_file_path.replace("\\", "/")
 
                 conn = get_connection()
-                stage_name = "STM.ADM.STUDENT_DATA_STAGE"
+                stage_name = "STM.ADM.STUDENT_CSV_STAGE"
 
                 with conn.cursor() as cursor:
 
@@ -55,7 +55,7 @@ def upload_csv_to_snowflake_stage():
                     """
 
                     cursor.execute(put_sql)
-                    cursor.execute("ALTER PIPE STM.ADM.STUDENTS_PIPE REFRESH")
+                    cursor.execute("ALTER PIPE STM.ADM.STUDENTS_CSV_PIPE REFRESH")
                     # Show files in stage
                     st.success(
                         f"{uploaded_file.name} data is loaded successfully to snowflake"

@@ -2,7 +2,7 @@ import streamlit as st
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parents[2]))
-from  data_load.students_data import upload_csv_to_snowflake_stage
+from  streamlit_app.data_load.students_csv_data_loading import upload_csv_to_snowflake_stage
 def data_load(): 
     st.markdown(
     """
@@ -33,11 +33,14 @@ def data_load():
 
     load_page = st.sidebar.selectbox(
         "Event",
-        ["Student", "Cars"]
+        ["CSV", "JSON","PARQUET"]
     )
 
-    if load_page == "Student":
+    if load_page == "CSV":
         upload_csv_to_snowflake_stage()
 
-    # elif load_page == "Cars":
+    # elif load_page == "JSON":
+    #     register_page()
+
+    # elif load_page == "PARQUET":
     #     register_page()
