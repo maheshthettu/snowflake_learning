@@ -55,14 +55,3 @@ COPY INTO STM.ADM.STUDENTS
 FROM @STM.ADM.STUDENT_DATA_STAGE
 FILE_FORMAT = (FORMAT_NAME = STM.ADM.STUDENTS_CSV_FORMAT);
 ```
-
-#### File Format
-In Snowflake, a File Format is essentially a reusable instruction manual or template that tells the database exactly how to read data from a raw file (when loading data) or how to write data out to a file (when unloading data).
-
-```sql
-CREATE OR REPLACE FILE FORMAT STM.ADM.STUDENTS_CSV_FORMAT
-TYPE = CSV
-SKIP_HEADER = 1
-FIELD_OPTIONALLY_ENCLOSED_BY = '"'
-EMPTY_FIELD_AS_NULL = TRUE;
-```
